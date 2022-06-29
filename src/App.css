@@ -1,38 +1,88 @@
 .App {
   text-align: center;
+  max-width: 700px;
+  margin: 10px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.mainboard-grid {
+  background-color: #00ffff;
+  min-height: 15vh;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 0.2rem;
+  border: black solid 0.1rem;
 }
 
-.App-link {
-  color: #61dafb;
+
+button {
+  background-color: white ;
+  border: black solid 0.1rem;
+  padding: 0.2rem;
+  color: rgb(82, 82, 142);
+  text-align: center;
+  clear:both;
+  margin-bottom: 0.5rem;
+  cursor:pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button :hover {
+  background-color: rgb(146, 14, 14);
+}
+
+.button-container {
+  padding: 0.3rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+select,
+.saveButton,
+textarea {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    padding:0 5px;
+    margin-top:0.2rem;
+    vertical-align:top;
+    border:1px solid #54A5DA;
+    height:27px;
+    background:#fff;
+    font-size:13px;
+    font-family:"Open Sans", sans-serif;
+    color:#666;
+    display:block;
+    width:auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+label{
+  vertical-align:top;
+  display:block;
+  padding: 0.5rem;
+}
+form{
+  padding: 0.5rem;
+}
+.tittle {
+  padding:0.5rem;
+  color:rgb(15, 9, 1);
+  text-shadow: 2px 2px 5px blue;
+}
+.quickBoard {
+  background-image: url("components/images/Auto.png");
+  background-size:100%;
+  height: 25rem;
+  width: 25rem;
+  margin: 0px auto;
 }

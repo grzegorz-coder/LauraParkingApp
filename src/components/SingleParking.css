@@ -1,0 +1,65 @@
+.parking {
+    margin: 0px auto;
+    background-color: rgb(101, 188, 101);
+    color: black;
+    height: 3.5rem;
+    width: 5rem;
+    border: 0.2rem inset rgb(61, 56, 56);
+    line-height: 4.5rem;
+    cursor: pointer;
+    text-align: left;
+    font-size: 3vh;
+  }
+  .parking:hover{
+    background-color: rgb(12, 99, 12);
+    text-align: left;
+  }
+  .takenParking {
+    background-image: url("images/Auto2.png");
+    background-size:100%;
+    height: 3.5rem;
+    width: 5rem;
+    margin: 0px auto;
+    cursor: pointer;
+    border: 0.2rem inset rgb(61, 56, 56);
+    line-height: 4.5rem;
+    color: black;
+    text-align: left;
+    font-size: 3vh;
+    
+  }
+  .largeWindow {
+    background-color: white;
+    height: auto;
+    width: 12rem;
+    margin: 0px auto;
+    cursor: pointer;
+    border: 0.2rem inset rgb(61, 56, 56);
+    line-height: 1rem;
+    color: black;
+    position: absolute;
+    
+  }
+ 
+.saveButton {
+  background-color: rgba(170, 181, 191, 0.765);
+  color: black;
+}
+
+.messages {
+  display:block;
+  width:auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 1.0rem;
+  list-style: none;
+  color:black;
+  padding:1rem;
+}
+.parkingNumber {
+  width:1rem;
+  height:1rem;
+}
