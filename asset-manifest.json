@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/LauraParkingApp/static/css/main.25c7edc6.css",
+    "main.js": "/LauraParkingApp/static/js/main.ce6ef7f4.js",
+    "static/js/787.bc7d429a.chunk.js": "/LauraParkingApp/static/js/787.bc7d429a.chunk.js",
+    "static/media/Auto2.png": "/LauraParkingApp/static/media/Auto2.a75026b21810f95e3694.png",
+    "static/media/Auto.png": "/LauraParkingApp/static/media/Auto.992d53f5e09bf1326708.png",
+    "index.html": "/LauraParkingApp/index.html",
+    "main.25c7edc6.css.map": "/LauraParkingApp/static/css/main.25c7edc6.css.map",
+    "main.ce6ef7f4.js.map": "/LauraParkingApp/static/js/main.ce6ef7f4.js.map",
+    "787.bc7d429a.chunk.js.map": "/LauraParkingApp/static/js/787.bc7d429a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25c7edc6.css",
+    "static/js/main.ce6ef7f4.js"
+  ]
+}
