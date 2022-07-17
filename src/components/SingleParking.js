@@ -81,8 +81,8 @@ export default function SingleParking() {
         className={takenParking}
         onClick={changeParkingToTaken}
         onDoubleClick={changeParkingToLargeWindow}
-        onMouseEnter={(name!==null || pNumber!==null|| rNumber!==null || parkingNumber!==null) ? changeParkingToMediumWindow : ''}
-        onMouseLeave={(name!==null || pNumber!==null || rNumber!==null || parkingNumber!==null) ? changeParkingToSmallWindow : ''}
+        onMouseEnter={(name!=="" || pNumber!==""|| rNumber!=="" || parkingNumber!=="") ? changeParkingToMediumWindow : ''}
+        onMouseLeave={(name!=="" || pNumber!=="" || rNumber!=="" || parkingNumber!=="") ? changeParkingToSmallWindow : ''}
         >
             {largeWindow}
         </div>
