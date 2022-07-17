@@ -12,20 +12,20 @@ export default function SingleParking() {
     const [pNumber, setPNumber] = useState("")
     const [rNumber, setRNumber] = useState("")
     const [parkingNumber, setParkingNumber] = useState("")
-    
-    const changeParkingToTaken = () => {
-        if(isChanging){
-            setTakenParking('takenParking')
-            setIsChanging(false) 
-            
-        }
-        else {setTakenParking('parking')
-        setIsChanging(true)
-        
-        }  
-    }
 
     
+   const changeParkingToTaken = () => {
+    if(isChanging){
+        setTakenParking('takenParking')
+        setIsChanging(false) 
+        
+    }
+    else {
+        setTakenParking('parking')
+        setIsChanging(true)
+    }  
+    }
+  
    const input1 = useRef();
    const input2 = useRef();
    const input3 = useRef();
@@ -38,19 +38,22 @@ export default function SingleParking() {
       parkingNumber!=="" ? setLargeWindow(parkingNumber) : setLargeWindow("")
       setIsChangeWindow(true)
    };
+
    const changeParkingToMediumWindow = () => {
-    if (!isChanging){setLargeWindow(<form className="largeWindow">
-    <div className='messages'>{name}</div>
-    <div className='messages'>{pNumber}</div>
-    <div className='messages'>{rNumber}</div>
-    </form>
+    if (!isChanging){setLargeWindow(
+        <form className="largeWindow">
+            <div className='messages'>{name}</div>
+            <div className='messages'>{pNumber}</div>
+            <div className='messages'>{rNumber}</div>
+        </form>
     )}
    }
+
    const changeParkingToSmallWindow = () => {
     parkingNumber!=="" ? setLargeWindow(parkingNumber) : setLargeWindow("")
    }
     
-    const changeParkingToLargeWindow = () => {
+   const changeParkingToLargeWindow = () => {
         if(changeWindow){
             setLargeWindow(<form className="largeWindow">
                 <input ref = {input1}
@@ -78,10 +81,10 @@ export default function SingleParking() {
         className={takenParking}
         onClick={changeParkingToTaken}
         onDoubleClick={changeParkingToLargeWindow}
-        onMouseEnter={(name!=="" || pNumber!=="" || rNumber!=="" || parkingNumber!=="") ? changeParkingToMediumWindow : ''}
-        onMouseLeave={(name!=="" || pNumber!=="" || rNumber!=="" || parkingNumber!=="") ? changeParkingToSmallWindow : ''}
+        onMouseEnter={(name!==null || pNumber!==null|| rNumber!==null || parkingNumber!==null) ? changeParkingToMediumWindow : ''}
+        onMouseLeave={(name!==null || pNumber!==null || rNumber!==null || parkingNumber!==null) ? changeParkingToSmallWindow : ''}
         >
-        {largeWindow} 
+            {largeWindow}
         </div>
-    )
+        )
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SingleParking from './components/SingleParking';
 
 const parkingNames = [
@@ -24,6 +24,7 @@ const parkingNames = [
   {id: '18'},
   {id: '19'},
 ]
+
 function ParkingApp() {
     // React States
   const [parkings, setParkings] = useState([])
@@ -33,11 +34,19 @@ function ParkingApp() {
   const [buttonName, setButtonName] = useState('Start', true);
   const [titleName, setTitleName] = useState('Sign In')
   const [logToApp, setLogToApp] = useState(true)
+  
+  //useEffect(() => {
+    //async() => {
+    //const res = await axios.get('http:localhost:3001/api/parkings');
+    //const res = fetch('http:localhost:3001/api/parkings');
+    //console.log(res)
+    //})
+  
     // User Login info
   const database = [
     {
-    username: "user1",
-    password: "pass1"
+      username: "user1",
+      password: "pass1"
     },
     {
       username: "user2",
@@ -103,7 +112,9 @@ function ParkingApp() {
   const showParking = () => {
     if(logToApp) {
     const showedParkings = [...parkingNames]
-    .map((parking) => <li>{parking}</li>)
+    .map((parking) => ({...parking, id: Math.random()}))
+    
+    //<li key={parking.id} id={parking.id}>{parking}</li>)
     setParkings(showedParkings)
     setButtonName('Log out')
     setLogToApp(false)
@@ -128,10 +139,7 @@ function ParkingApp() {
           <button onClick={showParking}>{buttonName}</button>
           <div className={quickBoard}>
             {parkings.map(parking =>(
-            
-            <SingleParking 
-            key = {parking.id}
-            /> 
+              <SingleParking key={parking.id}/> 
             ))
           } 
           </div>
