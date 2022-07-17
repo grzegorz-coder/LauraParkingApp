@@ -76,13 +76,14 @@ export default function SingleParking() {
             parkingNumber!=="" ? setLargeWindow(parkingNumber) : setLargeWindow("")
             setIsChangeWindow(true)
         }}
+        const emptyValues = name!=="" || pNumber!==""|| rNumber!=="" || parkingNumber!==""
         return(
         <div 
         className={takenParking}
         onClick={changeParkingToTaken}
         onDoubleClick={changeParkingToLargeWindow}
-        onMouseEnter={(name!=="" || pNumber!==""|| rNumber!=="" || parkingNumber!=="") ? changeParkingToMediumWindow : ''}
-        onMouseLeave={(name!=="" || pNumber!=="" || rNumber!=="" || parkingNumber!=="") ? changeParkingToSmallWindow : ''}
+        onMouseEnter={() => emptyValues ? changeParkingToMediumWindow : ''}
+        onMouseLeave={() => emptyValues ? changeParkingToSmallWindow : ''}
         >
             {largeWindow}
         </div>
