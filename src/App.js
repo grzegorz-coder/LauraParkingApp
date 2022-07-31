@@ -113,8 +113,6 @@ function ParkingApp() {
     if(logToApp) {
     const showedParkings = [...parkingNames]
     .map((parking) => ({...parking, id: Math.random()}))
-    
-    //<li key={parking.id} id={parking.id}>{parking}</li>)
     setParkings(showedParkings)
     setButtonName('Log out')
     setLogToApp(false)
