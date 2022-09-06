@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./UserLoginPanel.css";
-
+import ParkingsPanel from "./ParkingsPanel";
+import ParkingsChanger from "./ParkingsChanger";
+import UserForm from "./UserForm";
 
 const UserLoginPanel = (props) => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [titleName, setTitleName] = useState("Sign In");
 
-   //User Login Date
-   const database = [
+  //User Login Date
+  const database = [
     {
       username: "user1",
       password: "pass1",
@@ -28,10 +30,6 @@ const UserLoginPanel = (props) => {
     //Prevent page reload
     event.preventDefault();
 
-    const loginPanelData = {submitted: isSubmitted};
-
-    props.onSaveLoginPanelData(loginPanelData);
-
     let { uname, pass } = document.forms[0];
 
     // Find user login info
@@ -45,13 +43,12 @@ const UserLoginPanel = (props) => {
       } else {
         setIsSubmitted(true);
         setTitleName("LauraParkingApp");
+        props.onSaveLoginPanelData(isSubmitted);
       }
     } else {
       // Username not found
       setErrorMessages({ name: "uname", message: errors.uname });
-    };
-    
-    
+    }
   };
 
   // Generate JSX code for error message
@@ -65,30 +62,22 @@ const UserLoginPanel = (props) => {
     setIsSubmitted(false);
   };
 
-
-
   return (
     <div className="login-form">
       <div className="tittle">{titleName}</div>
-      {!isSubmitted ? 
-      <div className="form">
-        <form onSubmit={handleSubmit}>
-          <div className="input-container">
-            <label>Username </label>
-            <input type="text" name="uname" required />
-            {renderErrorMessage("uname")}
-          </div>
-          <div className="input-container">
-            <label>Password </label>
-            <input type="password" name="pass" required />
-            {renderErrorMessage("pass")}
-          </div>
-          <div className="button-container">
-            <input type="submit" value="Log In" />
-          </div>
-        </form>
-      </div> : <button onClick={clickLogOut}>Log Out</button>}
-      </div>          
+      {!isSubmitted ? (
+        <UserForm
+          handleSubmit={handleSubmit}
+          renderErrorMessage={renderErrorMessage}
+        />
+      ) : (
+        <div>
+          <ParkingsChanger />
+          <ParkingsPanel />
+          <button onClick={clickLogOut}>Log Out</button>
+        </div>
+      )}
+    </div>
   );
 };
 
