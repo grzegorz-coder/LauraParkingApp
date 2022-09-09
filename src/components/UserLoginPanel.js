@@ -5,9 +5,53 @@ import ParkingsChanger from "./ParkingsChanger";
 import UserForm from "./UserForm";
 
 const UserLoginPanel = (props) => {
+  const parkings = [
+    {
+      number: 1,
+      id: Math.random().toString(),
+    },
+    {
+      number: 2,
+      id: Math.random().toString(),
+    },
+    {
+      number: 3,
+      id: Math.random().toString(),
+    },
+    {
+      number: 4,
+      id: Math.random().toString(),
+    },
+    {
+      number: 5,
+      id: Math.random().toString(),
+    },
+    {
+      number: 6,
+      id: Math.random().toString(),
+    },
+    {
+      number: 7,
+      id: Math.random().toString(),
+    },
+    {
+      number: 8,
+      id: Math.random().toString(),
+    },
+    {
+      number: 9,
+      id: Math.random().toString(),
+    },
+    {
+      number: 10,
+      id: Math.random().toString(),
+    },
+  ];
+
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [titleName, setTitleName] = useState("Sign In");
+  const [filteredParking, setFilteredParking] = useState("select");
 
   //User Login Date
   const database = [
@@ -61,6 +105,13 @@ const UserLoginPanel = (props) => {
   const clickLogOut = () => {
     setIsSubmitted(false);
   };
+  const filterChangeHandler = (selectedParking) => {
+    setFilteredParking(selectedParking);
+  };
+
+  const filteredParkingNumber = parkings.filter((parkingNumber) => {
+    return parkingNumber.number.toString() === filteredParking.toString();
+  });
 
   return (
     <div className="login-form">
@@ -72,8 +123,11 @@ const UserLoginPanel = (props) => {
         />
       ) : (
         <div>
-          <ParkingsChanger />
-          <ParkingsPanel />
+          <ParkingsChanger
+            selectedParking={filteredParking}
+            filterChangeHandler={filterChangeHandler}
+          />
+          <ParkingsPanel parkings={parkings} filteredParkingNumber ={filteredParkingNumber}/>
           <button onClick={clickLogOut}>Log Out</button>
         </div>
       )}

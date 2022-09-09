@@ -1,12 +1,19 @@
+import React from "react";
+import AllParkings from "./AllParkings";
 import "./ParkingsPanel.css";
+import SingleParkingCar from "./SingeParkingCar";
 
-
-const ParkingsPanel = () => {
+const ParkingsPanel = (props) => {
   return (
     <div>
-    <h1>Hello Parking</h1>
+      {props.filteredParkingNumber.length === 0
+        ? props.parkings.map((parking) => (
+            <AllParkings key={parking.id} number={parking.number} />
+          ))
+        : props.filteredParkingNumber.map((parking) => (
+            <SingleParkingCar key={parking.id} number={parking.number} />
+          ))}
     </div>
-    
   );
 };
 
