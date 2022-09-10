@@ -9,49 +9,99 @@ const UserLoginPanel = (props) => {
     {
       number: 1,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 2,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 3,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 4,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 5,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 6,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 7,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 8,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 9,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
     {
       number: 10,
       id: Math.random().toString(),
+      clientName: "Grzegorz Jaworski",
+      regNumber: "GDA45678",
+      phoneNumber: "504345687",
+      carBrand: "Toyota Corolla",
+      date: new Date(2020, 7, 14),
     },
   ];
 
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [titleName, setTitleName] = useState("Sign In");
-  const [filteredParking, setFilteredParking] = useState("select");
+  const [filteredParking, setFilteredParking] = useState("select all");
 
   //User Login Date
   const database = [
@@ -127,7 +177,10 @@ const UserLoginPanel = (props) => {
             selectedParking={filteredParking}
             filterChangeHandler={filterChangeHandler}
           />
-          <ParkingsPanel parkings={parkings} filteredParkingNumber ={filteredParkingNumber}/>
+          <ParkingsPanel
+            parkings={parkings}
+            filteredParkingNumber={filteredParkingNumber}
+          />
           <button onClick={clickLogOut}>Log Out</button>
         </div>
       )}

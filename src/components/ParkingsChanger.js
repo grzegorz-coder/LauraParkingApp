@@ -8,7 +8,7 @@ const ParkingsChanger = (props) => {
         <div>
         <label>Select your parking number:</label>
         <select onChange={dropDownChangeHandler} value={props.selectedParking}>
-          <option value="0">select</option>
+          <option value="0">select all</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
