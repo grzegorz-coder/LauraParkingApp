@@ -4,10 +4,15 @@ import "./ParkingsPanel.css";
 import SingleParkingCar from "./SingeParkingCar";
 
 const ParkingsPanel = (props) => {
+  
+  const parkingLength = props.parkings.length;
+  const fParkingLength = props.filteredParkingNumber.length;
+  
   return (
-    <div className="parkingPanel__mainboard-grid">
+    <div className={`parkingPanel__mainboard-grid ${!(parkingLength && fParkingLength === 0)
+      ? 'sc' : ''}`}>
       
-        {props.filteredParkingNumber.length === 0
+        {fParkingLength === 0
           ? props.parkings.map((parking) => (
               <AllParkings
                 key={parking.id}

@@ -9,4 +9,5 @@ li {
     margin-right: auto;
     border: 0.2rem inset rgb(61, 56, 56);
     color: black;
+    display: block;
 }

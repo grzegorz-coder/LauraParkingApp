@@ -11,3 +11,14 @@
     padding: 0.2rem;
     border: black solid 0.1rem;
   }
+  .parkingPanel__mainboard-grid.sc {
+    background-color: white;
+    min-height: 15vh;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    display: block; 
+    padding: 0.2rem;
+    border: black solid 0.1rem;
+  }  
