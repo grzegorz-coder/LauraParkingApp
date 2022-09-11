@@ -5,7 +5,7 @@ import SingleParkingCar from "./SingeParkingCar";
 
 const ParkingsPanel = (props) => {
   return (
-    <div>
+    <div className="parkingPanel__mainboard-grid">
       <ul>
         {props.filteredParkingNumber.length === 0
           ? props.parkings.map((parking) => (

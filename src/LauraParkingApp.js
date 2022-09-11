@@ -5,7 +5,7 @@ import UserLoginPanel from "./components/UserLoginPanel";
 const LauraParkingApp = () => {
  
   return (
-    <div>
+    <div className="App">
       <div>
         <UserLoginPanel />
       </div>

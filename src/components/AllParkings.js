@@ -5,9 +5,9 @@ import "./AllParkings.css"
 const AllParkings = (props) => {
     
     return (
-    <div>
+    <div className="allParkings__mainboard-grid">
         <li>
-        <div>{props.number}</div>
+        <div className="allparkings__parking">{props.number}</div>
         </li>
     </div>)
 }

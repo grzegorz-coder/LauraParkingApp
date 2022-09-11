@@ -154,6 +154,7 @@ const UserLoginPanel = (props) => {
 
   const clickLogOut = () => {
     setIsSubmitted(false);
+    setTitleName("Sign In");
   };
   const filterChangeHandler = (selectedParking) => {
     setFilteredParking(selectedParking);
@@ -172,7 +173,7 @@ const UserLoginPanel = (props) => {
           renderErrorMessage={renderErrorMessage}
         />
       ) : (
-        <div>
+        <div >
           <ParkingsChanger
             selectedParking={filteredParking}
             filterChangeHandler={filterChangeHandler}

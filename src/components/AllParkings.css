@@ -1,7 +1,20 @@
-.free{
-    background: green
+.free {
+  background: green;
 }
 
-.reserved{
-    background-color: red;
+.reserved {
+  background-color: red;
+}
+
+.allparkings__parking {
+  margin: 0px auto;
+  background-color: rgb(101, 188, 101);
+  color: black;
+  height: 3.5rem;
+  width: 5rem;
+  border: 0.2rem inset rgb(61, 56, 56);
+  line-height: 4.5rem;
+  cursor: pointer;
+  text-align: left;
+  font-size: 3vh;
 }
