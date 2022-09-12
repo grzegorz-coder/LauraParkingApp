@@ -8,7 +8,7 @@ const AllParkings = (props) => {
     <div className="allParkings__mainboard-grid">
        
         <div className="allparkings__parking">{props.number}</div>
-       
+               
     </div>)
 }
 

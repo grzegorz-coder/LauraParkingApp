@@ -138,6 +138,7 @@ const UserLoginPanel = (props) => {
         setIsSubmitted(true);
         setTitleName("LauraParkingApp");
         props.onSaveLoginPanelData(isSubmitted);
+        
       }
     } else {
       // Username not found
@@ -162,6 +163,7 @@ const UserLoginPanel = (props) => {
 
   const filteredParkingNumber = parkings.filter((parkingNumber) => {
     return parkingNumber.number.toString() === filteredParking.toString();
+    
   });
 
   return (

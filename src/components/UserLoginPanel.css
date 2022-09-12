@@ -13,16 +13,4 @@ button {
     color:rgb(15, 9, 1);
     text-shadow: 2px 2px 5px blue;
   }
-  .userLoginPanel__mainboard-grid {
-    background-color: #00ffff;
-    min-height: 15vh;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    padding: 0.2rem;
-    border: black solid 0.1rem;
-  }
+  
