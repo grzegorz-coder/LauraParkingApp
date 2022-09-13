@@ -1,11 +1,11 @@
 import React from "react";
-import "./LauraParkingApp.css";
+import styles from "./LauraParkingApp.module.css";
 import UserLoginPanel from "./components/UserLoginPanel";
 
 const LauraParkingApp = () => {
  
   return (
-    <div className="App">
+    <div className={styles.app}>
       <div>
         <UserLoginPanel />
       </div>

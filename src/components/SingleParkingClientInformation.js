@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SingleParkingClientInformation.css";
+import "./SingleParkingClientInformation.module.css";
 
 const SingleParkingClientInformation = () => {
   const [enteredName, setEnteredName] = useState("");

@@ -1,13 +1,13 @@
-import "./AllParkings.css"
+import styles from "./AllParkings.module.css"
 
 
 
 const AllParkings = (props) => {
     
     return (
-    <div className="allParkings__mainboard-grid">
+    <div className={`${styles['allParkings__mainboard-grid']}`}>
        
-        <div className="allparkings__parking">{props.number}</div>
+        <div className={`${styles['allparkings__parking']}`}>{props.number}</div>
                
     </div>)
 }

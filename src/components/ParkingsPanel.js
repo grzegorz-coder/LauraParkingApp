@@ -1,6 +1,6 @@
 import React from "react";
 import AllParkings from "./AllParkings";
-import "./ParkingsPanel.css";
+import styles from "./ParkingsPanel.module.css";
 import SingleParkingCar from "./SingeParkingCar";
 
 const ParkingsPanel = (props) => {
@@ -9,8 +9,8 @@ const ParkingsPanel = (props) => {
 
   return (
     <div
-      className={`parkingPanel__mainboard-grid ${
-        !(parkingLength && fParkingLength === 0) ? "sc" : ""
+      className={`${styles['parkingPanel__mainboard-grid']} ${
+        !(parkingLength && fParkingLength === 0) ? styles.sc : ""
       }`}
     >
       {fParkingLength === 0

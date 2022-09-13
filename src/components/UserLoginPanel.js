@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./UserLoginPanel.css";
+import styles from "./UserLoginPanel.module.css";
 import ParkingsPanel from "./ParkingsPanel";
 import ParkingsChanger from "./ParkingsChanger";
 import UserForm from "./UserForm";
@@ -167,8 +167,8 @@ const UserLoginPanel = (props) => {
   });
 
   return (
-    <div className="login-form">
-      <div className="tittle">{titleName}</div>
+    <div>
+      <div className={styles.tittle}>{titleName}</div>
       {!isSubmitted ? (
         <UserForm
           handleSubmit={handleSubmit}

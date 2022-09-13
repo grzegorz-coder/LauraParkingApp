@@ -1,4 +1,3 @@
-import './ParkingsChanger.css'
 const ParkingsChanger = (props) => {
     const dropDownChangeHandler = (event) => {
     props.filterChangeHandler(event.target.value);
