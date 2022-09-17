@@ -1,24 +1,33 @@
 .parkingPanel__mainboard-grid {
-    background-color: #00ffff;
-    min-height: 15vh;
+    background-color: rgb(6, 49, 49);
+    min-height: 30vh;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-template-columns: 0.15fr 0.15fr 0.15fr 0.15fr 0.15fr;
+    grid-gap: 1rem;
     padding: 0.2rem;
-    border: black solid 0.1rem;
+    
   }
   .parkingPanel__mainboard-grid.sc {
     background-color: white;
-    min-height: 15vh;
+    min-height: 20vh;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
     display: block; 
     padding: 0.2rem;
-    border: black solid 0.1rem;
+    
   }  
+  
+@media (max-width: 768px) {
+  .parkingPanel__mainboard-grid {
+    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+  }
+  .parkingPanel__mainboard-grid.sc {
+    grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+  }
+}

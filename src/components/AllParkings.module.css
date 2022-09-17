@@ -1,22 +1,63 @@
-.free {
-  background: green;
-}
-
-.reserved {
-  background-color: red;
-}
-
 .allparkings__parking {
   margin: 0px auto;
-  background-color: rgb(101, 188, 101);
+  background-color: rgb(21, 191, 21);
   color: black;
   height: 3.5rem;
   width: 5rem;
   border: 0.2rem inset rgb(61, 56, 56);
   line-height: 4.5rem;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   font-size: 3vh;
+  box-shadow: 0 0 0.3rem 0.3rem rgb(21, 191, 21);
+  border-radius: 1rem
+}
+.allparkings__parking:hover {
+  background-color: rgb(72, 152, 72);
+  color:white; 
+}
+.allparkings__parking.red {
+  margin: 0px auto;
+  background-color: rgb(233, 39, 39);
+  color: black;
+  height: 3.5rem;
+  width: 5rem;
+  border: 0.2rem inset rgb(61, 56, 56);
+  line-height: 4.5rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 3vh;
+  box-shadow: 0 0 0.3rem 0.3rem rgb(233, 39, 39);
+  border-radius: 1rem
+}
+.allparkings__parking.red:hover {
+  background-color: rgb(158, 16, 16);
+  color:white; 
 }
 
 
+@media (max-width: 768px) {
+  .allparkings__parking {
+    background-color: rgb(21, 191, 21);
+    height: 3rem;
+    width: 2.5rem;
+    border: 0.1rem inset rgb(61, 56, 56);
+    line-height: 2.25rem;
+    font-size: 3vh;
+    box-shadow: 0 0 0.15rem 0.15rem rgb(21, 191, 21);
+    border-radius: 0.5rem;
+   
+  }
+  .allparkings__parking.red {
+    background-color: rgb(233, 39, 39);
+    height: 3rem;
+    width: 2.5rem;
+    border: 0.1rem inset rgb(61, 56, 56);
+    line-height: 2.25rem;
+    font-size: 3vh;
+    box-shadow: 0 0 0.15rem 0.15rem rgb(233, 39, 39);
+    border-radius: 0.5rem;
+   
+  }
+
+}

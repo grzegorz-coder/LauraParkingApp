@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SingleParkingClientInformation.module.css";
 
-const SingleParkingClientInformation = () => {
+const SingleParkingClientInformation = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredPNumber, setEnteredPNumber] = useState("");
   const [enteredRCarNumber, setEnteredRCarNumber] = useState("");
@@ -67,7 +67,7 @@ const SingleParkingClientInformation = () => {
           <div>
             <label>Car registration number</label>
             <input
-              type="number"
+              type="text"
               value={enteredRCarNumber}
               onChange={rCarNumberChangeHandler}
             />
@@ -75,7 +75,7 @@ const SingleParkingClientInformation = () => {
           <div>
             <label>Car brand</label>
             <input
-              type="number"
+              type="text"
               value={enteredCBrand}
               onChange={cBrandChangeHandler}
             />
