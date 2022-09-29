@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SingleParkingClientInformation.module.css";
 
 const SingleParkingClientInformation = (props) => {
@@ -27,13 +27,20 @@ const SingleParkingClientInformation = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
+    if (
+      enteredName.trim().length === 0 ||
+      enteredCBrand.trim().length === 0 ||
+      enteredRCarNumber.trim().length === 0 ||
+      enteredPNumber.trim().length === 0
+    ) {
+      return;
+    }
     const clientInformationData = {
-        clientName: enteredName,
-        regNumber: enteredRCarNumber,
-        phoneNumber: enteredPNumber,
-        carBrand: enteredCBrand,
-        date: new Date(enteredDate),
+      clientName: enteredName,
+      regNumber: enteredRCarNumber,
+      phoneNumber: enteredPNumber,
+      carBrand: enteredCBrand,
+      date: new Date(enteredDate),
     };
 
     props.onSaveClientInformationData(clientInformationData);
@@ -45,7 +52,7 @@ const SingleParkingClientInformation = (props) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <form onSubmit={submitHandler}>
         <div>
           <div>
@@ -92,13 +99,10 @@ const SingleParkingClientInformation = (props) => {
           </div>
         </div>
         <div>
-          <button type="button" onClick={props.onCancel}>
-            Cancel
-          </button>
           <button type="submit">Add Client Information Data</button>
         </div>
       </form>
-    </div>
+    </React.Fragment>
   );
 };
 

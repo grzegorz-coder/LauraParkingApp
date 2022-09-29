@@ -22,20 +22,14 @@ const SingleParkingCar = (props) => {
     console.log(clientsData)
   };
 
-  //const addClientsDataHandler = (act) => {
-  // setClientsData((prevCData) => {
-  //   return [cData, ...prevCData];
-  // });
-  // };
-
   return (
-    <div>
+    <React.Fragment>
       <div>
         <SingleParkingClientInformation
           onSaveClientInformationData={saveClientsDataHandler}
         />
       </div>
-      <div className={`${styles["singleParkingCar__largeWindow"]}`}>
+      <div className={`${styles['allparkings__largeWindow']} ${props.isReserved? styles.red : ''}`}> 
         <div>{props.number}</div>
         <div>{clientsData.clientName}</div>
         <ReservationDate date={props.date} />
@@ -43,7 +37,7 @@ const SingleParkingCar = (props) => {
         <div>{clientsData.phoneNumber}</div>
         <div>{clientsData.carBrand}</div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

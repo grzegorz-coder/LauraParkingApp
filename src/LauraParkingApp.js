@@ -5,11 +5,11 @@ import UserLoginPanel from "./components/UserLoginPanel";
 const LauraParkingApp = () => {
  
   return (
-    <div className={styles.app}>
-      <div>
+    <React.Fragment>
+      <div className={styles.app}>
         <UserLoginPanel />
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

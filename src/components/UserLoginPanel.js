@@ -167,7 +167,7 @@ const UserLoginPanel = (props) => {
   });
 
   return (
-    <div>
+    <React.Fragment>
       <div className={styles.tittle}>{titleName}</div>
       {!isSubmitted ? (
         <UserForm
@@ -187,7 +187,7 @@ const UserLoginPanel = (props) => {
           <button onClick={clickLogOut}>Log Out</button>
         </div>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 
