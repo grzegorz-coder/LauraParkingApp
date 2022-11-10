@@ -55,7 +55,7 @@ const UserLoginPanel = (props) => {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
-        setTitleName("LauraParkingApp");
+        setTitleName("");
         props.onSaveLoginPanelData(isSubmitted);
         
       }

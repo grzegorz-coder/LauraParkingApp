@@ -4,6 +4,7 @@ import styles from "./ParkingsPanel.module.css";
 import SingleParkingCar from "./SingeParkingCar";
 import ParkingsArea from "./UI/ParkingsArea";
 import Header from "./Layout/Header";
+import ParkingSummary from "./ParkingSummary";
 
 const ParkingsPanel = (props) => {
 
@@ -76,6 +77,7 @@ const ParkingsPanel = (props) => {
   return (
     <React.Fragment>
       <Header />
+      <ParkingSummary />
       <div
         className={`${styles["parkingPanel__mainboard-grid"]} ${
           !(parkingLength && fParkingLength === 0) ? styles.sc : ""
