@@ -1,9 +1,11 @@
+import React from "react";
+
 const ParkingsChanger = (props) => {
     const dropDownChangeHandler = (event) => {
     props.filterChangeHandler(event.target.value);
   };
     return (
-    <div>
+    <React.Fragment>
         <div>
         <label>Select your parking number:</label>
         <select onChange={dropDownChangeHandler} value={props.selectedParking}>
@@ -20,6 +22,6 @@ const ParkingsChanger = (props) => {
           <option value="10">10</option>
         </select>
       </div>
-    </div>)
+      </React.Fragment>)
 }
 export default ParkingsChanger;

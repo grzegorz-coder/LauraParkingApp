@@ -1,94 +1,13 @@
 import React, { useState } from "react";
 import styles from "./UserLoginPanel.module.css";
 import ParkingsPanel from "./ParkingsPanel";
-import ParkingsChanger from "./ParkingsChanger";
+
 import UserForm from "./UserForm";
 
 const UserLoginPanel = (props) => {
-  const parkings = [
-    {
-      number: 1,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 2,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 3,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 4,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 5,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 6,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
+  const parkings = [   
     {
       number: 7,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 8,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 9,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-    {
-      number: 10,
       id: Math.random().toString(),
       clientName: "Grzegorz Jaworski",
       regNumber: "GDA45678",
@@ -175,11 +94,7 @@ const UserLoginPanel = (props) => {
           renderErrorMessage={renderErrorMessage}
         />
       ) : (
-        <div >
-          <ParkingsChanger
-            selectedParking={filteredParking}
-            filterChangeHandler={filterChangeHandler}
-          />
+        <div>
           <ParkingsPanel
             parkings={parkings}
             filteredParkingNumber={filteredParkingNumber}

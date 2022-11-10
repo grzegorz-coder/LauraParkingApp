@@ -1,29 +1,73 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import AllParkings from "./AllParkings";
 import styles from "./ParkingsPanel.module.css";
 import SingleParkingCar from "./SingeParkingCar";
-
+import ParkingsArea from "./UI/ParkingsArea";
+import Header from "./Layout/Header";
 
 const ParkingsPanel = (props) => {
-  const [isReserved, setIsReserved] = useState(false)
 
-  const changeTile = () => {
-        !isReserved? setIsReserved(true) : setIsReserved(false)
-    }
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [bError, setBError] = useState();
+  const [parkings, setParkings] = useState([])
+
+  useEffect(() => {
+    const fetchParkings = async () => {
+      const response = await fetch(
+        'https://react-htttp-792a0-default-rtdb.firebaseio.com/parkings.json'
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong.");
+      }
+      const responseData = await response.json();
+      const loadedParkings = [];
+      for (const key in responseData) {
+        loadedParkings.push({
+          id: key,
+          number: responseData[key].number,
+        });
+      }
+      setParkings(loadedParkings);
+      setIsLoading(false);
+    };
+    fetchParkings().catch((error) => {
+      setIsLoading(false);
+      setBError(error.message);
+    });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section className={styles.ParkingsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
+  if (bError) {
+    return (
+      <section className={styles.ParkingsError}>
+        <p>{bError}</p>
+      </section>
+    );
+  }
+
   const parkingLength = props.parkings.length;
   const fParkingLength = props.filteredParkingNumber.length;
-
-  return (
-    <div
-      className={`${styles['parkingPanel__mainboard-grid']} ${
-        !(parkingLength && fParkingLength === 0) ? styles.sc : ""
-      }`}
-    >
-      {fParkingLength === 0
-        ? props.parkings.map((parking) => (
-            <AllParkings key={parking.id} number={parking.number} id={parking.id} changeTile={changeTile} isReserved={isReserved}/>
-          ))
-        : props.filteredParkingNumber.map((parking) => (
+  
+  const showParkingOrParkings =
+    fParkingLength === 0
+      ? parkings.map((parking) => (
+          <AllParkings
+            key={parking.id}
+            number={parking.number}
+            id={parking.id}
+          />
+        ))
+      : props.filteredParkingNumber.map((parking) => (
+          <ParkingsArea>
             <SingleParkingCar
               key={parking.id}
               id={parking.id}
@@ -32,11 +76,22 @@ const ParkingsPanel = (props) => {
               pNumber={parking.phoneNumber}
               rNumber={parking.regNumber}
               cBrand={parking.carBrand}
-              date={parking.date}
-              isReserved={isReserved}
+              date={parking.date}             
             />
-          ))}
-    </div>
+          </ParkingsArea>
+        ));
+         
+  return (
+    <React.Fragment>
+      <Header />
+      <div
+        className={`${styles["parkingPanel__mainboard-grid"]} ${
+          !(parkingLength && fParkingLength === 0) ? styles.sc : ""
+        }`}
+      >
+        {showParkingOrParkings}
+      </div>
+    </React.Fragment>
   );
 };
 

@@ -21,7 +21,16 @@
     display: block; 
     padding: 0.2rem;
     
-  }  
+  }
+  
+  .ParkingsLoading {
+    text-align: center;
+    color:white;
+  }
+  .ParkingsError {
+    text-align: center;
+    color:red;
+  }
   
 @media (max-width: 768px) {
   .parkingPanel__mainboard-grid {
