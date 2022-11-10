@@ -58,15 +58,7 @@ const ParkingsPanel = (props) => {
   const fParkingLength = props.filteredParkingNumber.length;
   
   const showParkingOrParkings =
-    fParkingLength === 0
-      ? parkings.map((parking) => (
-          <AllParkings
-            key={parking.id}
-            number={parking.number}
-            id={parking.id}
-          />
-        ))
-      : props.filteredParkingNumber.map((parking) => (
+      props.filteredParkingNumber.map((parking) => (
           <ParkingsArea>
             <SingleParkingCar
               key={parking.id}
@@ -89,7 +81,12 @@ const ParkingsPanel = (props) => {
           !(parkingLength && fParkingLength === 0) ? styles.sc : ""
         }`}
       >
-        {showParkingOrParkings}
+       {parkings.map((parking) => (
+          <AllParkings
+            key={parking.id}
+            number={parking.number}
+            id={parking.id}
+          />))}         
       </div>
     </React.Fragment>
   );
