@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import Modal from "./UI/Modal";
 import styles from "./AllParkings.module.css";
 
 const AllParkings = (props) => {
@@ -10,6 +10,7 @@ const AllParkings = (props) => {
   };
   return (
     <React.Fragment>
+     
       <div className={`${styles["allParkings__mainboard-grid"]}`}>
         <button
           className={`${styles["allparkings__parking"]} ${
