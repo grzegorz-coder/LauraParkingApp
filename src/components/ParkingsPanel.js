@@ -3,8 +3,9 @@ import AllParkings from "./AllParkings";
 import styles from "./ParkingsPanel.module.css";
 import SingleParkingCar from "./SingeParkingCar";
 import ParkingsArea from "./UI/ParkingsArea";
-import Header from "./Layout/Header";
 import ParkingSummary from "./ParkingSummary";
+import Modal from "./UI/Modal";
+import Button from "./UI/Button";
 
 const ParkingsPanel = (props) => {
 
@@ -12,6 +13,7 @@ const ParkingsPanel = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [bError, setBError] = useState();
   const [parkings, setParkings] = useState([])
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const fetchParkings = async () => {
@@ -76,7 +78,7 @@ const ParkingsPanel = (props) => {
          
   return (
     <React.Fragment>
-      <Header />
+      {showModal && <Modal>tralala</Modal>}
       <ParkingSummary />
       <div
         className={`${styles["parkingPanel__mainboard-grid"]} ${
@@ -90,6 +92,7 @@ const ParkingsPanel = (props) => {
             id={parking.id}
           />))}         
       </div>
+      <Button onClick = {props.onClick} buttonName = {'Log out'}></Button>
     </React.Fragment>
   );
 };

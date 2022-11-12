@@ -1,36 +1,20 @@
-input[type="submit"] {
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    padding:0 5px;
-    margin-top:0.2rem;
-    vertical-align:top;
-    border:1px solid #54A5DA;
-    height:27px;
-    background:#fff;
-    font-size:13px;
-    font-family:"Open Sans", sans-serif;
-    color:#666;
-    display:block;
-    width:auto;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-label{
-    vertical-align:top;
-    font-size: medium;
-    color: black;
-    display:block;
-    padding: 0.5rem;
-  }
-form{
-    padding: 0.5rem;
-}
-button {
-  margin-top: 0.5rem;
-}
-select {
+.input {
+  margin: auto;
+  align-items: center;
   margin-bottom: 0.5rem;
+}
+
+.input label {
+  font-weight: bold;
+  margin-right: 1rem;
+  }
+
+.input input {
+  width: 3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font: inherit;
+  padding-left: 0.5rem;
+  background-color:white;
 }
  

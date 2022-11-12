@@ -3,7 +3,7 @@ import classes from "./Button.module.css";
 const Button = (props) => {
   return (
     <React.Fragment>
-      <button className={classes.button}>{props.buttonName}</button>
+      <button className={classes.button} onClick={props.onClick}>{props.buttonName}</button>
     </React.Fragment>
   );
 };

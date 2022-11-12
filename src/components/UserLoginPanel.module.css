@@ -1,25 +1,12 @@
 button {
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
   box-sizing:border-box;
-  padding:0 5px;
   margin-top:0.2rem;
   vertical-align:top;
-  border:1px solid #54A5DA;
   height:27px;
   background:#fff;
-  font-size:13px;
-  font-family:"Open Sans", sans-serif;
-  color:#666;
-  display:block;
   width:auto;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  }
-  .tittle {
-    padding:0.5rem;
-    color:rgb(15, 9, 1);
-    text-shadow: 2px 2px 5px blue;
   }
   

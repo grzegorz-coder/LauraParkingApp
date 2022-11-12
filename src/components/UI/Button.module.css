@@ -2,14 +2,21 @@
     cursor: pointer;
     font: inherit;
     border: none;
-    background-color: #4d1601;
+    background-color: #0b790b;
     color: white;
     padding: 0.75rem 3rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around;  
     align-items: center;
     border-radius: 25px;
     font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    height: 27px;
+    box-sizing:border-box;
+    margin-top:0.2rem;
+    vertical-align:top;
+    width: auto;
   }
   
   .button:hover,

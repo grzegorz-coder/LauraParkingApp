@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import styles from "./UserLoginPanel.module.css";
 import ParkingsPanel from "./ParkingsPanel";
-
+import Header from "./Layout/Header";
 import UserForm from "./UserForm";
 
 const UserLoginPanel = (props) => {
-  const parkings = [   
+  const parkings = [
     {
       number: 7,
       id: Math.random().toString(),
@@ -19,7 +18,6 @@ const UserLoginPanel = (props) => {
 
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [titleName, setTitleName] = useState("Sign In");
   const [filteredParking, setFilteredParking] = useState("select all");
 
   //User Login Date
@@ -55,9 +53,7 @@ const UserLoginPanel = (props) => {
         setErrorMessages({ name: "pass", message: errors.pass });
       } else {
         setIsSubmitted(true);
-        setTitleName("");
         props.onSaveLoginPanelData(isSubmitted);
-        
       }
     } else {
       // Username not found
@@ -74,7 +70,6 @@ const UserLoginPanel = (props) => {
 
   const clickLogOut = () => {
     setIsSubmitted(false);
-    setTitleName("Sign In");
   };
   const filterChangeHandler = (selectedParking) => {
     setFilteredParking(selectedParking);
@@ -82,12 +77,11 @@ const UserLoginPanel = (props) => {
 
   const filteredParkingNumber = parkings.filter((parkingNumber) => {
     return parkingNumber.number.toString() === filteredParking.toString();
-    
   });
 
   return (
     <React.Fragment>
-      <div className={styles.tittle}>{titleName}</div>
+      <Header />
       {!isSubmitted ? (
         <UserForm
           handleSubmit={handleSubmit}
@@ -98,8 +92,8 @@ const UserLoginPanel = (props) => {
           <ParkingsPanel
             parkings={parkings}
             filteredParkingNumber={filteredParkingNumber}
+            onClick={clickLogOut}
           />
-          <button onClick={clickLogOut}>Log Out</button>
         </div>
       )}
     </React.Fragment>

@@ -10,8 +10,8 @@ const AllParkings = (props) => {
   };
   return (
     <React.Fragment>
-     
-      <div className={`${styles["allParkings__mainboard-grid"]}`}>
+          
+       <div className={`${styles["allParkings__mainboard-grid"]}`}>
         <button
           className={`${styles["allparkings__parking"]} ${
             isReserved ? styles.red : ""
