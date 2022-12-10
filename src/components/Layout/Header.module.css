@@ -26,3 +26,17 @@
     object-fit: cover;
     transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
   }
+
+  
+@media (max-width: 768px) {
+  .header {
+    top: 0;
+    left: auto;
+    width: auto;
+    height: 4.0rem;
+    font-size: 70%;
+    margin: auto;
+    background-color: rgb(21, 191, 21);
+    padding: 0 30%;
+  }
+}

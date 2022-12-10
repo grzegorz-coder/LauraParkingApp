@@ -4,22 +4,10 @@ import Header from "./Layout/Header";
 import UserForm from "./UserForm";
 
 const UserLoginPanel = (props) => {
-  const parkings = [
-    {
-      number: 7,
-      id: Math.random().toString(),
-      clientName: "Grzegorz Jaworski",
-      regNumber: "GDA45678",
-      phoneNumber: "504345687",
-      carBrand: "Toyota Corolla",
-      date: new Date(2020, 7, 14),
-    },
-  ];
-
+  
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [filteredParking, setFilteredParking] = useState("select all");
-
+  
   //User Login Date
   const database = [
     {
@@ -60,7 +48,6 @@ const UserLoginPanel = (props) => {
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
-
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
@@ -71,14 +58,7 @@ const UserLoginPanel = (props) => {
   const clickLogOut = () => {
     setIsSubmitted(false);
   };
-  const filterChangeHandler = (selectedParking) => {
-    setFilteredParking(selectedParking);
-  };
-
-  const filteredParkingNumber = parkings.filter((parkingNumber) => {
-    return parkingNumber.number.toString() === filteredParking.toString();
-  });
-
+  
   return (
     <React.Fragment>
       <Header />
@@ -90,8 +70,6 @@ const UserLoginPanel = (props) => {
       ) : (
         <div>
           <ParkingsPanel
-            parkings={parkings}
-            filteredParkingNumber={filteredParkingNumber}
             onClick={clickLogOut}
           />
         </div>

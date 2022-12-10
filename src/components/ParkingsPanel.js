@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
+import {useSelector} from 'react-redux'
 import AllParkings from "./AllParkings";
 import styles from "./ParkingsPanel.module.css";
 import SingleParkingCar from "./SingeParkingCar";
-import ParkingsArea from "./UI/ParkingsArea";
 import ParkingSummary from "./ParkingSummary";
 import Modal from "./UI/Modal";
 import Button from "./UI/Button";
 
 const ParkingsPanel = (props) => {
-
-
   const [isLoading, setIsLoading] = useState(true);
   const [bError, setBError] = useState();
-  const [parkings, setParkings] = useState([])
-  const [showModal, setShowModal] = useState(false)
+  const [parkings, setParkings] = useState([]);
+  //const [showModal, setShowModal] = useState(false);
+  const showForm = useSelector((state) => state.showForm)
 
   useEffect(() => {
     const fetchParkings = async () => {
       const response = await fetch(
-        'https://react-htttp-792a0-default-rtdb.firebaseio.com/parkings.json'
+        "https://react-htttp-792a0-default-rtdb.firebaseio.com/parkings.json"
       );
 
       if (!response.ok) {
@@ -57,42 +56,22 @@ const ParkingsPanel = (props) => {
     );
   }
 
-  const parkingLength = props.parkings.length;
-  const fParkingLength = props.filteredParkingNumber.length;
-  
-  const showParkingOrParkings =
-      props.filteredParkingNumber.map((parking) => (
-          <ParkingsArea>
-            <SingleParkingCar
-              key={parking.id}
-              id={parking.id}
-              number={parking.number}
-              cName={parking.clientName}
-              pNumber={parking.phoneNumber}
-              rNumber={parking.regNumber}
-              cBrand={parking.carBrand}
-              date={parking.date}             
-            />
-          </ParkingsArea>
-        ));
-         
   return (
     <React.Fragment>
-      {showModal && <Modal>tralala</Modal>}
+      {showForm && <Modal>
+        <SingleParkingCar />
+        </Modal>}
       <ParkingSummary />
-      <div
-        className={`${styles["parkingPanel__mainboard-grid"]} ${
-          !(parkingLength && fParkingLength === 0) ? styles.sc : ""
-        }`}
-      >
-       {parkings.map((parking) => (
+      <div className={styles["parkingPanel__mainboard-grid"]}>
+        {parkings.map((parking) => (
           <AllParkings
             key={parking.id}
             number={parking.number}
             id={parking.id}
-          />))}         
+          />
+        ))}
       </div>
-      <Button onClick = {props.onClick} buttonName = {'Log out'}></Button>
+      <Button onClick={props.onClick} buttonName={"Log out"}></Button>
     </React.Fragment>
   );
 };
